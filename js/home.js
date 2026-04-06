@@ -1,41 +1,49 @@
-// FAQ
-document.querySelectorAll(".faq-question").forEach((btn) => {
+document.getElementById('theme').addEventListener('change', function() {
+  document.documentElement.setAttribute('data-theme', this.checked ? 'light' : 'dark');
+  localStorage.setItem('theme', this.checked ? 'light' : 'dark');
+});
+const saved = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', saved);
+document.getElementById('theme').checked = saved === 'light';
+
+ document.querySelectorAll(".faq-question").forEach(btn => {
   btn.addEventListener("click", () => {
     const answer = btn.nextElementSibling;
 
-    document.querySelectorAll(".faq-answer").forEach((a) => {
+    document.querySelectorAll(".faq-answer").forEach(a => {
       if (a !== answer) a.classList.remove("open");
     });
 
     answer.classList.toggle("open");
   });
 });
-
-// validation
+document.getElementById("signinBtn").addEventListener('click',function(){
+  window.location.href="auth.html"
+});
 function isValidEmail(email) {
   return email.includes("@") && email.includes(".");
 }
 
-// forms
 function handleForm(formId, inputId) {
   const form = document.getElementById(formId);
   const input = document.getElementById(inputId);
-
-  if (!form || !input) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const value = input.value.trim();
 
-    if (!value) return alert("Email is required");
-    if (!isValidEmail(value)) return alert("Enter a valid email");
+    if (!value) {
+      alert("Email is required");
+      return;
+    }
 
-    document.body.classList.add("fade-out");
+    if (!isValidEmail(value)) {
+      alert("Enter a valid email");
+      return;
+    }
 
-    setTimeout(() => {
-      window.location.href = "auth.html";
-    }, 400);
+    alert("Welcome! Email: " + value);
     input.value = "";
   });
 }
@@ -43,16 +51,14 @@ function handleForm(formId, inputId) {
 handleForm("heroForm", "heroEmail");
 handleForm("faqForm", "faqEmail");
 
-const signInForm = document.getElementById("signInForm");
 
-if (signInForm) {
-  signInForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+const dots = document.querySelector(".dots");
+if (dots) {
+  let frames = [".", "..", "..."];
+  let i = 0;
 
-    document.body.classList.add("fade-out");
-
-    setTimeout(() => {
-      window.location.href = "auth.html";
-    }, 400);
-  });
+  setInterval(() => {
+    dots.textContent = frames[i];
+    i = (i + 1) % frames.length;
+  }, 500);
 }

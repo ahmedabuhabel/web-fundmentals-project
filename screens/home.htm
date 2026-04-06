@@ -3,23 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix – Watch TV Shows Online, Watch Movies Online</title>
-    <link rel="stylesheet" href="../css/theme.css" />
+    <title>Netflix</title>
     <link rel="stylesheet" href="../css/home.css" />
   </head>
   <body>
     <nav class="nf-nav">
       <img src="../assets/images/Wordmark.png" alt="" class="nf-logo" />
       <div class="nf-nav-right">
+        <div class="toggle-wrap">
+          <span class="icon">🌙</span>
+          <label class="switch">
+            <input type="checkbox" id="theme" />
+            <span class="slider"></span>
+          </label>
+          <span class="icon">☀️</span>
+        </div>
         <div class="nf-lang-select">
           <span class="globe-icon">🌐</span>
-          <select aria-label="Language">
+          <select>
             <option value="en">English</option>
             <option value="ar">العربية</option>
           </select>
           <span class="chevron">▾</span>
         </div>
-        <a href="auth.html" class="nf-btn-signin">Sign In</a>
+        <a href="#" class="nf-btn-signin" id="signinBtn">Sign In</a>
       </div>
     </nav>
     <section class="hero">
@@ -31,12 +38,11 @@
           Ready to watch? Enter your email to create or restart your membership.
         </p>
         <form class="hero-form" id="heroForm" novalidate>
-          <div class="hero-input-wrap">
+          <div class="hero-input">
             <input
               type="email"
               id="heroEmail"
               placeholder="Email address"
-              aria-label="Email address"
               autocomplete="email"
             />
             <button type="submit" class="nf-btn-red">
@@ -129,7 +135,7 @@
         </div>
         <div class="feature-media">
           <div class="phone-mockup">
-            <img src="../assets/images/mobile-0819.png" alt="" />
+            <img src="../assets/images/mobile-.png" alt="" />
             <div class="download-badge">
               <div class="download-thumb">
                 <img src="../assets/images/boxshot.png" alt="Stranger Things" />
@@ -248,13 +254,8 @@
           Ready to watch? Enter your email to create or restart your membership.
         </p>
         <form class="hero-form" id="faqForm" novalidate>
-          <div class="hero-input-wrap">
-            <input
-              type="email"
-              id="faqEmail"
-              placeholder="Email address"
-              aria-label="Email address"
-            />
+          <div class="hero-input">
+            <input type="email" id="faqEmail" placeholder="Email address" />
             <button type="submit" class="nf-btn-red">
               Get Started <span class="arrow">›</span>
             </button>
@@ -300,11 +301,9 @@
       <div class="footer-lang">
         <div class="nf-lang-select">
           <span class="globe-icon">🌐</span>
-          <select aria-label="Language">
+          <select>
             <option value="en">English</option>
             <option value="ar">العربية</option>
-            <option value="fr">Français</option>
-            <option value="es">Español</option>
           </select>
           <span class="chevron">▾</span>
         </div>
@@ -312,7 +311,6 @@
       <p class="footer-copy">Netflix United States</p>
     </footer>
 
-    <script src="../js/theme.js"></script>
     <script src="../js/home.js"></script>
   </body>
 </html>
