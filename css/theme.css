@@ -1,0 +1,71 @@
+:root {
+    --bg-main: #141414;
+    --bg-modal: #181818;
+
+    --text-primary: #ffffff;
+    --text-secondary: #aaaaaa;
+
+    --btn-bg: #ffffff;
+    --btn-text: #000000;
+    --btn-hover: #e6e6e6;
+
+    --icon-bg: rgba(42, 42, 42, 0.6);
+    --icon-hover: rgba(255, 255, 255, 0.1);
+
+    --border-color: #404040;
+    --accent: #e50914;
+    --card-bg: #2f2f2f;
+
+    --transition: all 0.3s ease;
+}
+
+body.light-mode {
+    --bg-main: #f0f0f0;
+    --bg-modal: #ffffff;
+
+    --text-primary: #141414;
+    --text-secondary: #555555;
+
+    --btn-bg: #141414;
+    --btn-text: #ffffff;
+    --btn-hover: #333333;
+
+    --icon-bg: rgba(200, 200, 200, 0.6);
+    --icon-hover: rgba(0, 0, 0, 0.1);
+
+    --border-color: #cccccc;
+    --card-bg: #e0e0e0;
+}
+
+* {
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text-primary);
+}
+
+.theme-toggle {
+    background: var(--icon-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background: var(--icon-hover);
+}
+
+body {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+body.fade-out {
+    opacity: 0;
+}

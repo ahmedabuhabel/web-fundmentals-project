@@ -6,11 +6,12 @@
 }
 
 body {
-    background: #141414;
-    color: white;
+    background: var(--bg-main);
+    color: var(--text-primary);
 }
 
 
+/* NAVBAR */
 .navbar {
     position: fixed;
     width: 100%;
@@ -19,12 +20,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to bottom, black, transparent);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
     z-index: 100;
 }
 
+body.light-mode .navbar {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), transparent);
+}
+
 .navbar.scrolled {
-    background: black;
+    background: var(--bg-modal);
     transition: background 0.3s ease;
 }
 
@@ -34,7 +39,7 @@ body {
 }
 
 .logo {
-    color: red;
+    color: var(--accent);
     font-weight: bold;
     font-size: 24px;
     margin-right: 20px;
@@ -43,7 +48,7 @@ body {
 nav a {
     margin-right: 15px;
     text-decoration: none;
-    color: white;
+    color: var(--text-primary);
     font-size: 14px;
 }
 
@@ -53,17 +58,13 @@ nav a {
     gap: 20px;
 }
 
-
 .profile {
-
-
-    border-radius: 4px;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-
+/* HERO */
 .hero {
     position: relative;
     height: 80vh;
@@ -84,17 +85,21 @@ nav a {
 .hero h1 {
     font-size: 64px;
     margin-bottom: 10px;
-    text-align: center;
+    text-align: left;
+    color: white;
+    /* 🔥 ثابت */
 }
 
 .hero p {
     font-size: 14px;
     margin-bottom: 20px;
+    color: white;
+    /* 🔥 ثابت */
 }
 
+/* HERO FOOTER */
 .hero-footer {
     position: absolute;
-
     right: 30px;
     bottom: 250px;
     display: flex;
@@ -102,34 +107,39 @@ nav a {
     gap: 10px;
 
     background: rgba(0, 0, 0, 0.4);
+    /* ثابت */
     padding: 10px 15px;
     border-radius: 4px;
 
     backdrop-filter: blur(5px);
-
 }
 
-
+/* ICONS */
 .refresh {
     border: 2px solid white;
+    /* 🔥 ثابت */
     border-radius: 50%;
     padding: 5px;
     font-size: 12px;
+    color: white;
 }
 
 .divider {
     width: 1px;
     height: 20px;
     background: white;
+    /* 🔥 ثابت */
     opacity: 0.6;
 }
-
 
 .rating {
     font-size: 14px;
     font-weight: 500;
+    color: white;
+    /* 🔥 ثابت */
 }
 
+/* BUTTONS */
 .buttons button {
     padding: 10px 20px;
     margin-right: 10px;
@@ -138,20 +148,19 @@ nav a {
     font-weight: bold;
 }
 
-button i {
-    margin-right: 5px;
-}
-
 .play {
     background: white;
+    /* 🔥 ثابت */
     color: black;
 }
 
 .info {
     background: rgba(109, 109, 110, 0.7);
+    /* 🔥 ثابت */
     color: white;
 }
 
+/* MAIN */
 main {
     margin-top: -80px;
     padding: 20px;
@@ -167,7 +176,11 @@ main {
     margin-bottom: 10px;
 }
 
+#firstH {
+    color: white;
+}
 
+/* ROW */
 .row-container {
     display: flex;
     overflow-x: auto;
@@ -187,12 +200,11 @@ main {
 
 .row-container img:hover {
     transform: scale(1.1);
-    transition: .3;
 }
 
+/* TOP 10 */
 .top10 {
-
-    color: white;
+    color: var(--text-primary);
 }
 
 .top10 h2 {
@@ -206,16 +218,14 @@ main {
     overflow-x: auto;
     position: relative;
     margin-left: 20px;
-
-
 }
 
+/* CARD */
 .card {
     position: relative;
     min-width: 150px;
     height: 220px;
     margin-left: 20px;
-
 }
 
 .card img {
@@ -232,18 +242,22 @@ main {
     top: 20px;
     font-size: 180px;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.08);
     z-index: 1;
     line-height: 1;
+
     -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
     color: transparent;
+}
+
+body.light-mode .rank {
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.2);
 }
 
 .badge {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    background: red;
+    background: var(--accent);
     color: white;
     font-size: 12px;
     padding: 3px 6px;
@@ -256,12 +270,12 @@ main {
     transition: 0.3s;
 }
 
+/* FOOTER */
 .footer {
     padding: 60px 80px;
-    background: #141414;
-    color: #757575;
+    background: var(--bg-main);
+    color: var(--text-secondary);
     padding-top: 100px;
-
 }
 
 .footer-icons {
@@ -293,17 +307,17 @@ main {
 }
 
 .service-code {
-    border: 1px solid #757575;
+    border: 1px solid var(--border-color);
     padding: 8px 15px;
     background: transparent;
-    color: #757575;
+    color: var(--text-secondary);
     cursor: pointer;
     margin-bottom: 20px;
 }
 
 .service-code:hover {
-    color: white;
-    border-color: white;
+    color: var(--text-primary);
+    border-color: var(--text-primary);
 }
 
 .footer-copy {

@@ -1,33 +1,3 @@
-:root {
-  --bg-main: #141414;
-  --bg-modal: #181818;
-  --text-primary: #ffffff;
-  --text-secondary: #aaaaaa;
-  --btn-bg: #fff;
-  --btn-text: #000;
-  --btn-hover: #e6e6e6;
-  --icon-bg: rgba(42, 42, 42, 0.6);
-  --icon-hover: rgba(255, 255, 255, 0.1);
-  --border-color: #404040;
-  --accent: #e50914;
-  --card-bg: #2f2f2f;
-  --transition: all 0.3s ease;
-}
-
-body.light-mode {
-  --bg-main: #f0f0f0;
-  --bg-modal: #ffffff;
-  --text-primary: #141414;
-  --text-secondary: #555555;
-  --btn-bg: #141414;
-  --btn-text: #fff;
-  --btn-hover: #333333;
-  --icon-bg: rgba(200, 200, 200, 0.6);
-  --icon-hover: rgba(0, 0, 0, 0.1);
-  --border-color: #cccccc;
-  --card-bg: #e0e0e0;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -40,7 +10,8 @@ body {
   color: var(--text-primary);
   line-height: 1.5;
   transition: var(--transition);
-  padding: 20px 0; /* Simulating space around modal */
+  padding: 20px 0;
+  /* Simulating space around modal */
 }
 
 /* Header / Controls */
@@ -133,6 +104,7 @@ body.light-mode .modal-container {
   position: relative;
   height: 600px;
 }
+
 .hero-bg {
   position: absolute;
   top: 0;
@@ -141,6 +113,7 @@ body.light-mode .modal-container {
   height: 100%;
   overflow: hidden;
 }
+
 .hero-bg img {
   width: 100%;
   height: 100%;
@@ -168,7 +141,8 @@ body.light-mode .modal-container {
 
 .hero-content {
   position: absolute;
-  bottom: 100px; /* Above the linear shadow start */
+  bottom: 100px;
+  /* Above the linear shadow start */
   left: 50px;
   width: 60%;
   z-index: 10;
@@ -198,7 +172,8 @@ body.light-mode .modal-container {
   font-weight: 800;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  color: white; /* Title is always white over image */
+  color: white;
+  /* Title is always white over image */
 }
 
 .actions {
@@ -252,13 +227,15 @@ body.light-mode .modal-container {
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 10px;
-  color: white; /* Force white over hero bg */
+  color: white;
+  /* Force white over hero bg */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .tag-new {
   color: #46d369;
 }
+
 .box-tag {
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 0 4px;
@@ -293,7 +270,8 @@ body.light-mode .modal-container {
   padding: 0 50px;
   position: relative;
   z-index: 10;
-  margin-top: -80px; /* Overlap the linear shadow */
+  margin-top: -80px;
+  /* Overlap the linear shadow */
   color: var(--text-primary);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -316,9 +294,11 @@ body.light-mode .details-section {
 .metadata {
   font-size: 14px;
 }
+
 .metadata p {
   margin-bottom: 6px;
 }
+
 .metadata span {
   color: var(--text-secondary);
 }
@@ -338,6 +318,7 @@ body.light-mode .details-section {
 .section-header h3 {
   font-size: 24px;
 }
+
 .show-name {
   color: var(--text-secondary);
   font-size: 18px;
@@ -385,12 +366,14 @@ body.light-mode .details-section {
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .ep-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
+
 .episode-item:hover .ep-thumb img {
   transform: scale(1.05);
 }
@@ -419,14 +402,17 @@ body.light-mode .details-section {
 .ep-details {
   flex-grow: 1;
 }
+
 .ep-title-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
 }
+
 .ep-title-row h4 {
   font-size: 16px;
 }
+
 .duration {
   color: var(--text-secondary);
 }
@@ -441,6 +427,7 @@ body.light-mode .details-section {
 .more-like-this {
   margin-bottom: 50px;
 }
+
 .more-like-this h3 {
   font-size: 24px;
   margin-bottom: 20px;
@@ -538,10 +525,12 @@ body.light-mode .details-section {
 .about-section {
   padding-top: 20px;
 }
+
 .about-section h3 {
   font-size: 24px;
   margin-bottom: 15px;
 }
+
 .about-section h3 strong {
   font-weight: 800;
 }
@@ -558,7 +547,8 @@ body.light-mode .details-section {
 
 /* Video Modal Placeholder */
 .video-modal {
-  display: none; /* Hidden by default */
+  display: none;
+  /* Hidden by default */
   position: fixed;
   top: 0;
   left: 0;
@@ -593,6 +583,7 @@ body.light-mode .details-section {
     transform: scale(0.9);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -609,6 +600,7 @@ body.light-mode .details-section {
   z-index: 10;
   transition: color 0.3s;
 }
+
 .close-video:hover {
   color: var(--accent);
 }
@@ -646,6 +638,7 @@ body.light-mode .details-section {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -657,6 +650,7 @@ body.light-mode .details-section {
     width: 90%;
     left: 20px;
   }
+
   .description-grid {
     grid-template-columns: 1fr;
   }

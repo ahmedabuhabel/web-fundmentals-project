@@ -1,8 +1,9 @@
-document.querySelectorAll(".faq-question").forEach(btn => {
+// FAQ
+document.querySelectorAll(".faq-question").forEach((btn) => {
   btn.addEventListener("click", () => {
     const answer = btn.nextElementSibling;
 
-    document.querySelectorAll(".faq-answer").forEach(a => {
+    document.querySelectorAll(".faq-answer").forEach((a) => {
       if (a !== answer) a.classList.remove("open");
     });
 
@@ -10,31 +11,31 @@ document.querySelectorAll(".faq-question").forEach(btn => {
   });
 });
 
-
+// validation
 function isValidEmail(email) {
   return email.includes("@") && email.includes(".");
 }
 
+// forms
 function handleForm(formId, inputId) {
   const form = document.getElementById(formId);
   const input = document.getElementById(inputId);
+
+  if (!form || !input) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const value = input.value.trim();
 
-    if (!value) {
-      alert("Email is required");
-      return;
-    }
+    if (!value) return alert("Email is required");
+    if (!isValidEmail(value)) return alert("Enter a valid email");
 
-    if (!isValidEmail(value)) {
-      alert("Enter a valid email");
-      return;
-    }
+    document.body.classList.add("fade-out");
 
-    alert("Welcome! Email: " + value);
+    setTimeout(() => {
+      window.location.href = "auth.html";
+    }, 400);
     input.value = "";
   });
 }
@@ -42,14 +43,16 @@ function handleForm(formId, inputId) {
 handleForm("heroForm", "heroEmail");
 handleForm("faqForm", "faqEmail");
 
+const signInForm = document.getElementById("signInForm");
 
-const dots = document.querySelector(".dots");
-if (dots) {
-  let frames = [".", "..", "..."];
-  let i = 0;
+if (signInForm) {
+  signInForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  setInterval(() => {
-    dots.textContent = frames[i];
-    i = (i + 1) % frames.length;
-  }, 500);
+    document.body.classList.add("fade-out");
+
+    setTimeout(() => {
+      window.location.href = "auth.html";
+    }, 400);
+  });
 }

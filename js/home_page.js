@@ -7,3 +7,10 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("scrolled");
   }
 });
+function goToPage() {
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = "detail.html";
+  }, 400);
+}
