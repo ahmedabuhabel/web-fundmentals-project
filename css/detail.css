@@ -32,17 +32,9 @@ body.light-mode .top-header {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), transparent);
 }
 
-.logo h1 {
+.logo img {
   color: var(--accent);
-  font-size: 32px;
-  font-weight: 800;
-  letter-spacing: 1px;
-
-  /* width: 8vw; */
-}
-
-.logo {
-  text-decoration: none;
+  width: 120px;
 }
 
 .controls {
@@ -84,7 +76,6 @@ body.light-mode .top-header {
   background: var(--icon-hover);
 }
 
-/* Modal Container (The page itself acting as a wide modal) */
 .modal-container {
   max-width: 1100px;
   margin: 60px auto 0;
@@ -99,7 +90,6 @@ body.light-mode .modal-container {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Hero Section */
 .hero-section {
   position: relative;
   height: 600px;
@@ -142,7 +132,6 @@ body.light-mode .modal-container {
 .hero-content {
   position: absolute;
   bottom: 100px;
-  /* Above the linear shadow start */
   left: 50px;
   width: 60%;
   z-index: 10;
@@ -173,7 +162,6 @@ body.light-mode .modal-container {
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   color: white;
-  /* Title is always white over image */
 }
 
 .actions {
@@ -228,7 +216,6 @@ body.light-mode .modal-container {
   font-weight: 500;
   margin-bottom: 10px;
   color: white;
-  /* Force white over hero bg */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -243,7 +230,6 @@ body.light-mode .modal-container {
   font-size: 12px;
 }
 
-/* To adapt box-tags deeper in content */
 .main-content .box-tag {
   border-color: var(--border-color);
   color: var(--text-primary);
@@ -303,7 +289,6 @@ body.light-mode .details-section {
   color: var(--text-secondary);
 }
 
-/* Main Content */
 .main-content {
   padding: 40px 50px;
 }
@@ -324,7 +309,6 @@ body.light-mode .details-section {
   font-size: 18px;
 }
 
-/* Episodes List */
 .episodes-list {
   display: flex;
   flex-direction: column;
@@ -423,7 +407,6 @@ body.light-mode .details-section {
   line-height: 1.4;
 }
 
-/* More Like This */
 .more-like-this {
   margin-bottom: 50px;
 }
@@ -521,7 +504,6 @@ body.light-mode .details-section {
   overflow: hidden;
 }
 
-/* About Section */
 .about-section {
   padding-top: 20px;
 }
@@ -545,10 +527,8 @@ body.light-mode .details-section {
   color: var(--text-secondary);
 }
 
-/* Video Modal Placeholder */
 .video-modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
   top: 0;
   left: 0;
@@ -644,7 +624,6 @@ body.light-mode .details-section {
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 900px) {
   .hero-content {
     width: 90%;
