@@ -1,20 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 1. Light and Dark Mode Toggle ---
-  const themeToggleUrl = document.getElementById("themeToggle");
-
-  if (themeToggleUrl) {
-    themeToggleUrl.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-
-      // Update text based on mode
-      if (document.body.classList.contains("light-mode")) {
-        themeToggleUrl.innerText = "Dark Mode";
-      } else {
-        themeToggleUrl.innerText = "Light Mode";
-      }
-    });
-  }
-
   // --- 2. Another JS Functionality: Interactive Episode Selection ---
   // Clicking an episode makes it "active" and could theoretically load its details into the player
   const episodes = document.querySelectorAll(".episode-item");
