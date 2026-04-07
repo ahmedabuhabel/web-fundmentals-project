@@ -53,7 +53,9 @@ function handleForm(formId, inputId) {
       return;
     }
 
-    alert("Welcome! Email: " + value);
+    setTimeout(() => {
+      window.location.href = "home_page.html";
+    }, 400);
     input.value = "";
   });
 }

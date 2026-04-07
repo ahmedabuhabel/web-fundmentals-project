@@ -33,7 +33,7 @@ body.light-mode .top-header {
 }
 
 .logo h1 {
-  color: white;
+  color: red;
   font-size: 32px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -84,7 +84,6 @@ body.light-mode .top-header {
   background: var(--icon-hover);
 }
 
-/* Modal Container (The page itself acting as a wide modal) */
 .modal-container {
   max-width: 1100px;
   margin: 60px auto 0;
@@ -654,4 +653,53 @@ body.light-mode .details-section {
   .description-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked+.slider {
+  background-color: red;
+}
+
+input:checked+.slider::before {
+  transform: translateX(26px);
 }

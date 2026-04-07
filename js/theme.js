@@ -1,16 +1,10 @@
 console.log("theme loaded");
 
-const toggle = document.getElementById("themeToggle");
+const toggle = document.getElementById("theme");
 
 if (toggle) {
-  toggle.addEventListener("click", () => {
+  toggle.addEventListener("change", () => {
     document.body.classList.toggle("light-mode");
-
-    if (document.body.classList.contains("light-mode")) {
-      toggle.textContent = "☀️";
-    } else {
-      toggle.textContent = "🌙";
-    }
   });
 }
 document.querySelectorAll("a").forEach((link) => {
