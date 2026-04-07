@@ -1,24 +1,34 @@
-document.getElementById('theme').addEventListener('change', function() {
-  document.documentElement.setAttribute('data-theme', this.checked ? 'light' : 'dark');
-  localStorage.setItem('theme', this.checked ? 'light' : 'dark');
+document.getElementById("theme").addEventListener("change", function () {
+  document.documentElement.setAttribute(
+    "data-theme",
+    this.checked ? "light" : "dark",
+  );
+  localStorage.setItem("theme", this.checked ? "light" : "dark");
 });
-const saved = localStorage.getItem('theme') || 'dark';
-document.documentElement.setAttribute('data-theme', saved);
-document.getElementById('theme').checked = saved === 'light';
+const saved = localStorage.getItem("theme") || "dark";
+document.documentElement.setAttribute("data-theme", saved);
+document.getElementById("theme").checked = saved === "light";
 
- document.querySelectorAll(".faq-question").forEach(btn => {
+document.querySelectorAll(".faq-question").forEach((btn) => {
   btn.addEventListener("click", () => {
     const answer = btn.nextElementSibling;
+    const icon = btn.querySelector(".faq-icon");
 
-    document.querySelectorAll(".faq-answer").forEach(a => {
-      if (a !== answer) a.classList.remove("open");
+    document.querySelectorAll(".faq-question").forEach((b) => {
+      if (b !== btn) {
+        const i = b.querySelector(".faq-icon");
+        if (i) i.textContent = "+";
+      }
     });
 
     answer.classList.toggle("open");
+    if (icon) {
+      icon.textContent = answer.classList.contains("open") ? "×" : "+";
+    }
   });
 });
-document.getElementById("signinBtn").addEventListener('click',function(){
-  window.location.href="auth.html"
+document.getElementById("signinBtn").addEventListener("click", function () {
+  window.location.href = "auth.html";
 });
 function isValidEmail(email) {
   return email.includes("@") && email.includes(".");
@@ -50,7 +60,6 @@ function handleForm(formId, inputId) {
 
 handleForm("heroForm", "heroEmail");
 handleForm("faqForm", "faqEmail");
-
 
 const dots = document.querySelector(".dots");
 if (dots) {
